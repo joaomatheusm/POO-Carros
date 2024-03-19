@@ -42,7 +42,7 @@ class Utilitario extends Carro {
     }
 }
 
-const getTipoSelecionado = () => {
+const getObjetoCarro = () => {
     const todosTipos = [...document.getElementsByName('f_tipo')];
     const tipoSelecionado = todosTipos.filter(element => element.checked);
 
@@ -81,22 +81,13 @@ const criarElementoCarro = (carro) => {
         
         carros.splice(index, 1);
 
+        evt.target.parentNode.remove();
         console.log(carros);
-        gerenciarHTML(carros);
     });
 
     novoElemento.appendChild(botaoRemover);
     
     return novoElemento;
-}
-
-const gerenciarHTML = (carros) => {
-    caixaCarros.innerHTML = '';
-    
-    carros.forEach(element => {
-        const elementoCarro = criarElementoCarro(element);    
-        caixaCarros.appendChild(elementoCarro);
-    });
 }
 
 const caixaNome = document.querySelector('#f_nome');
@@ -121,12 +112,13 @@ rbNormal.addEventListener('click', () => {
 let carros = [];
 
 btnAdd.addEventListener('click', () => {
-    const carro = getTipoSelecionado();
+    const carro = getObjetoCarro();
     
     carros.push(carro);
     
-    gerenciarHTML(carros);
+    caixaCarros.appendChild(criarElementoCarro(carro));
 
     resetarValores();
+
     console.log(carros);
 });
