@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+.carros {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.carro {
+    display: flex;
+    flex-direction: column;
+    border: 3px #008 solid;
+    background-color: #8cf;
+    padding: 5px;
+    margin: 3px;
+    border-radius: 5px;
+    display: flex;
+    width: 200px;
+}
+
+.campoForm {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.campoForm input {
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+
+.campoForm button {
+    background-color: #888;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.carro > button {
+    cursor: pointer;
+}
+
+main {
+    margin: 10px;
+    border: solid black 2px;
+    padding: 50px;
+    padding-top: 30px;
+}
