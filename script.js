@@ -68,9 +68,9 @@ const criarElementoCarro = (carro) => {
     novoElemento.setAttribute('class', 'carro');
     novoElemento.innerHTML = `Nome: ${carro.nome}<br>
         Portas: ${carro.portas}<br>
-        Cor: ${carro.cor}<br>
-        Blindagem: ${carro.blindagem}<br>
-        Munição: ${carro.municao}`
+        Cor: ${carro.cor ? carro.cor : 'Preto'}<br>
+        Blindagem: ${carro.blindagem ? carro.blindagem : 'Não possui'}<br>
+        Munição: ${carro.municao ? carro.municao : 'Não possui'}`
 
     const botaoRemover = document.createElement('button');
     botaoRemover.setAttribute('id', 'btn_removerCarro');
